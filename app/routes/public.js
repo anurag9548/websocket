@@ -30,4 +30,5 @@ router.post('/signup', signupUser);
 router.get('/message/:text', createMessage);
 router.get('/get-data/:symbol', getData);
 
+
 export default router;
