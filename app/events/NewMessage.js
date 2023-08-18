@@ -1,10 +1,11 @@
-const emitNewMessageEvent = (newMessage, user) => {
+const emitNewMessageEvent = (newMessage, results) => {
     try {
         global.io.emit('newMessage', {
-            from: user.name,
-            text: newMessage.text,
-            date: newMessage.date,
+            // from: user.name,
+            newMessage: newMessage,
+            results : results
         });
+        
     } catch (error) {
         console.log(error);
     }

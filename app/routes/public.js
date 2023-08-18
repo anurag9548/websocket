@@ -1,6 +1,6 @@
 import express from 'express';
 import {loginUser, signupUser} from '../controllers/UserController.js';
-import {createMessage} from '../controllers/MessageController.js';
+import {createMessage, getData} from '../controllers/MessageController.js';
 import {auth} from '../middleware/auth.js';
 import { fileURLToPath} from 'url';
 import path, { dirname } from 'path';
@@ -26,6 +26,8 @@ router.get('/test', (req, res) => {
 });
 router.post('/login', loginUser);
 router.post('/signup', signupUser);
-router.post('/message', auth, createMessage);
+// router.post('/message', auth, createMessage);
+router.get('/message/:text', createMessage);
+router.get('/get-data/:symbol', getData);
 
 export default router;
