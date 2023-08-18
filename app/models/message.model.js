@@ -1,15 +1,26 @@
 import mongoose from 'mongoose';
 
-
+// const subSchema = new mongoose.Schema({
+//   value: { type: Number, required: true },
+//   is_up: { type: Boolean, required: true },
+// }, { _id: false });
 
 const messageSchema = new mongoose.Schema({
-  text: { type: String, required: true },
-  files: { type: String, required: false },
-  sender_id: { type: String, required: true },
-  receiver_id: { type: String, required: false, default: null},
-  seen: { type: Number, required: true, default: 0},
+  type: { type: String, required: true },
+  symbol: {type: String, required: true},
+  ltp: { type: String, required: true },
+  volume: { type: String, required: true },
+  bid: { type: String, required: true },
+  ask: { type: String, required: true },
+  high: { type: String, required: true },
+  low: { type: String, required: true },
+  open: { type: String, required: true },
+  close: { type: String, required: true },
   date: { type: String, required: true},
-  status: { type: Number, required: false, default: 0},
+  hour: { type: String, required: true},
+  minute: { type: String, required: true},
+ 
+ 
 }, {
   timestamps: true,
 });
